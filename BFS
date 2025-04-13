@@ -1,0 +1,60 @@
+import java.util. *;
+class Main {
+    public static class Node{
+        int val;
+        Node left;
+        Node right;
+        public Node(int val){
+            this.val = val;
+        }
+        
+    }
+    // public static void display (Node root) {
+    //     if(root == null) return ;
+    // System.out.println(root.val);
+    // if(root.left != null)  System.out.println(root.left.val);
+    // if(root.right!= null) System.out.println(root.right.val);
+    //     display ( root.left);
+    //     display ( root.right);
+    // }
+// public static void preorder (Node root ){
+//     // root left right 
+//     if(root== null) return ;
+//     System.out.println(root.val);
+//     preorder ( root.left);
+//     preorder ( root.right);
+    
+    
+// }
+    public static void main(String[] args) {
+        Node root = new Node(1);
+        Node a = new Node(2);      // 1
+        Node b = new Node(3);     // 2  3 
+        root.left = a;         //  4 5 6 7 
+        root.right = b;
+          Node c = new Node(4);
+          Node d= new Node(5);
+          a.left = c;
+          a.right = d;
+        Node e = new Node(6);
+        Node f = new Node(7);
+        b.left = e;
+        b.right = f;
+           Queue <Node> qq = new LinkedList<>();
+          // add, remove, peek
+          // push, pop, peek
+       if(root != null) qq.add(root);
+        while(qq.size()>0){
+            Node temp = qq.peek();
+           if(temp.left != null) qq.add(temp.left);
+           if(temp.right != null) qq.add(temp.right);
+           
+            System.out.println(temp.val);
+            qq.remove();
+            
+        }
+        
+        
+        
+           }
+}
